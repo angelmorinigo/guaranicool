@@ -29,4 +29,3 @@ fetch("https://sheet.best/api/sheets/13b8502d-4902-40aa-8fda-a4667229ee9f", {
       console.log(error);
     })
    })
-})
