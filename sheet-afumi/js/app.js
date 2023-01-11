@@ -1,7 +1,7 @@
 const formulario =  document.getElementById('formulario')
 const data = {
-    Nombres: "angel",
-    Telefono: "0975624601",
+    Nombres: formulario.nombre.value,
+    Telefono: formulario.telefono.value,
     Estado: "1",
     Fecha: new Date(),
   };
