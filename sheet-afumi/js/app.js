@@ -16,11 +16,11 @@ const formulario =  document.getElementById('formulario')
                 "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    Nombres: formulario.nombre,
-                    Telefono: formulario.telefono,
+                    Nombres: formulario.nombre.value,
+                    Telefono: formulario.telefono.value,
                     Estado: "1",
                     Fecha: new Date(),
-                    Cedula: formulario.cedula,
+                    Cedula: formulario.cedula.value,
                 }),
             }),
        
