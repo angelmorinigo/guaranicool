@@ -1,7 +1,7 @@
 const formulario =  document.getElementById('formulario')
 
-   const registro  = getElementById('registro')
-   const exito  = getElementById('exito')
+   const registro  = document.getElementById('registro')
+   const exito  = document.getElementById('exito')
 
          try{ 
             formulario.addEventListener('submit',async(e)=>{
@@ -16,11 +16,11 @@ const formulario =  document.getElementById('formulario')
                 "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    Nombres: formulario.nombre.value,
-                    Telefono: formulario.telefono.value,
+                    Nombres: formulario.nombre,
+                    Telefono: formulario.telefono,
                     Estado: "1",
                     Fecha: new Date(),
-                    Cedula: formulario.cedula.value,
+                    Cedula: formulario.cedula,
                 }),
             }),
        
@@ -30,4 +30,23 @@ const formulario =  document.getElementById('formulario')
    })
 }catch(e){
     console.log(e)
+}
+
+try{ 
+      const respuesta = formulario.addEventListener('submit',async(e)=>{
+        e.preventDefault();
+    // Add one line to the sheet
+
+        // Add one line to the sheet
+    await fetch("https://sheet.best/api/sheets/13b8502d-4902-40aa-8fda-a4667229ee9f", );
+
+    const resultado = await respuesta.json();
+    console.log(resultado);
+
+
+registro.classList.remove('activo')
+exito.classList.add('activo')
+})
+}catch(e){
+console.log(e)
 }
