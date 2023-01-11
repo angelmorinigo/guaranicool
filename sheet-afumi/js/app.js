@@ -3,7 +3,7 @@ const data = {
     Nombres: "angel",
     Telefono: "0975624601",
     Estado: "1",
-    "fecha": new Date(),
+    Fecha: new Date(),
   };
 
 formulario.addEventListener('submit',(e)=>{
