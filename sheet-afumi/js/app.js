@@ -8,12 +8,12 @@ const data = {
    const registro  = getElementById('registro')
    const exito  = getElementById('exito')
 
-formulario.addEventListener('submit',(e)=>{
+formulario.addEventListener('submit',async(e)=>{
     e.preventDefault();
  // Add one line to the sheet
 
     // Add one line to the sheet
-fetch("https://sheet.best/api/sheets/13b8502d-4902-40aa-8fda-a4667229ee9f", {
+await fetch("https://sheet.best/api/sheets/13b8502d-4902-40aa-8fda-a4667229ee9f", {
     method: "POST",
     mode: "cors",
     headers: {
