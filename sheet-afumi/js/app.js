@@ -10,7 +10,8 @@ formulario.addEventListener('submit',(e)=>{
     },
     body: JSON.stringify({
         "Nombres":'Primera prueba',
-        "Telefono": '0975624601'
+        "Telefono": '0975624601',
+        "Estado": '1'
     })
    })
 })
