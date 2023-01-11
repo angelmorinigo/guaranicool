@@ -5,6 +5,8 @@ const data = {
     Estado: "1",
     Fecha: new Date(),
   };
+   const registro  = getElementById('registro')
+   const exito  = getElementById('exito')
 
 formulario.addEventListener('submit',(e)=>{
     e.preventDefault();
@@ -20,4 +22,7 @@ fetch("https://sheet.best/api/sheets/13b8502d-4902-40aa-8fda-a4667229ee9f", {
     body: JSON.stringify(data),
   })
     
+
+  registro.classList.remove('activo')
+  exito.classList.add('activo')
    })
