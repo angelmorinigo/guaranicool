@@ -9,9 +9,9 @@ formulario.addEventListener('submit',(e)=>{
         'Content-Type':'aplication/json'
     },
     body: JSON.stringify({
-        "Nombres":'Primera prueba',
-        "Telefono": '0975624601',
-        "Estado": '1'
+        "Nombres":"Primera prueba",
+        "Telefono": "0975624601",
+        "Estado": "1"
     })
    })
 })
