@@ -1,10 +1,5 @@
 const formulario =  document.getElementById('formulario')
-const data = {
-    Nombres: formulario.nombre.value,
-    Telefono: formulario.telefono.value,
-    Estado: "1",
-    Fecha: new Date(),
-  };
+
    const registro  = getElementById('registro')
    const exito  = getElementById('exito')
 
@@ -19,7 +14,13 @@ await fetch("https://sheet.best/api/sheets/13b8502d-4902-40aa-8fda-a4667229ee9f"
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify({
+        Nombres: formulario.nombre.value,
+        Telefono: formulario.telefono.value,
+        Estado: "1",
+        Fecha: new Date(),
+        Cedula: formulario.cedula.value,
+    }),
   })
     
 
