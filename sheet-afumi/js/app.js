@@ -23,6 +23,8 @@ const formulario =  document.getElementById('formulario')
                     Cedula: formulario.cedula.value,
                 }),
             }),
+
+            
        
 
   registro.classList.remove('activo')
@@ -31,3 +33,14 @@ const formulario =  document.getElementById('formulario')
 }catch(e){
     console.log(e)
 }
+
+
+// Parsed Format
+fetch("https://sheet.best/api/sheets/13b8502d-4902-40aa-8fda-a4667229ee9f")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
