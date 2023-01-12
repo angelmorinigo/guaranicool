@@ -33,12 +33,10 @@ const formulario =  document.getElementById('formulario')
 }
 
 try{ 
-      const respuesta = formulario.addEventListener('submit',async(e)=>{
-        e.preventDefault();
-    // Add one line to the sheet
+   
 
         // Add one line to the sheet
-    await fetch("https://sheet.best/api/sheets/13b8502d-4902-40aa-8fda-a4667229ee9f", );
+   const respuesta= await fetch("https://sheet.best/api/sheets/13b8502d-4902-40aa-8fda-a4667229ee9f", {});
 
     const resultado = await respuesta.json();
     console.log(resultado);
@@ -46,7 +44,7 @@ try{
 
 registro.classList.remove('activo')
 exito.classList.add('activo')
-})
+
 }catch(e){
 console.log(e)
 }
