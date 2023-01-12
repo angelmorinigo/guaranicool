@@ -31,20 +31,3 @@ const formulario =  document.getElementById('formulario')
 }catch(e){
     console.log(e)
 }
-
-try{ 
-   
-
-        // Add one line to the sheet
-   const respuesta= await fetch("https://sheet.best/api/sheets/13b8502d-4902-40aa-8fda-a4667229ee9f", {});
-
-    const resultado = await respuesta.json();
-    console.log(resultado);
-
-
-registro.classList.remove('activo')
-exito.classList.add('activo')
-
-}catch(e){
-console.log(e)
-}
