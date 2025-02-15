@@ -115,6 +115,10 @@ input:focus {
 	outline: none;
 	border: 2px solid var(--primario);
 }
+@media (max-width: 768px) {
+    .contenedor {
+        grid-template-columns: 1fr; /* Cambia a una sola columna */
+    }
 
 .contenedor-input svg {
 	position: absolute;
