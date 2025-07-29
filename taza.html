@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Vista previa de grabado en taza</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #f0f0f0;
+    }
+    canvas {
+      display: block;
+    }
+    .controls {
+      margin: 20px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    #text {
+      padding: 8px;
+      font-size: 16px;
+    }
+    select, button {
+      padding: 8px;
+      font-size: 16px;
+    }
+  </style>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Great+Vibes&family=Montserrat:wght@400;700&family=Oswald&family=Raleway:wght@500&family=Staatliches&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <h2>Grabado en Taza</h2>
+
+  <div class="controls">
+    <input type="text" id="text" placeholder="Escribe un nombre..." value="Angel Morinigo" />
+    <select id="font">
+      <option value="Montserrat">Montserrat</option>
+      <option value="Oswald">Oswald</option>
+      <option value="Raleway">Raleway</option>
+      <option value="Bebas Neue">Bebas Neue</option>
+      <option value="Great Vibes">Great Vibes</option>
+      <option value="Staatliches">Staatliches</option>
+    </select>
+    <button onclick="descargar()">Descargar imagen</button>
+  </div>
+
+  <div id="viewer"></div>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <script>
+    let scene, camera, renderer, mug, textureCanvas, textureCtx, texture;
+    let text = "Angel Morinigo";
+    let font = "Montserrat";
+
+    function crearCanvasTexto() {
+      textureCanvas = document.createElement('canvas');
+      textureCanvas.width = 512;
+      textureCanvas.height = 256;
+      textureCtx = textureCanvas.getContext('2d');
+      actualizarTexto();
+      texture = new THREE.CanvasTexture(textureCanvas);
+    }
+
+    function actualizarTexto() {
+      textureCtx.clearRect(0, 0, textureCanvas.width, textureCanvas.height);
+      textureCtx.fillStyle = '#ffffff';
+      textureCtx.fillRect(0, 0, textureCanvas.width, textureCanvas.height);
+
+      // Forzamos carga de fuente
+      const fontTest = new FontFace(font, `local(${font}), url(https://fonts.gstatic.com/s/${font.toLowerCase().replace(/ /g, '')}/v1/regular.woff2)`);
+      document.fonts.load(`40px '${font}'`).then(() => {
+        textureCtx.fillStyle = '#000000';
+        textureCtx.textAlign = 'center';
+        textureCtx.textBaseline = 'middle';
+        textureCtx.font = `40px '${font}'`;
+        textureCtx.fillText(text, textureCanvas.width / 2, textureCanvas.height / 2);
+        if (texture) texture.needsUpdate = true;
+      });
+    }
+
+    function init() {
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(40, window.innerWidth / 600, 0.1, 1000);
+      camera.position.z = 5;
+
+      renderer = new THREE.WebGLRenderer({ alpha: true, preserveDrawingBuffer: true });
+      renderer.setSize(window.innerWidth, 600);
+      document.getElementById('viewer').appendChild(renderer.domElement);
+
+      const controls = new THREE.OrbitControls(camera, renderer.domElement);
+
+      const luz = new THREE.DirectionalLight(0xffffff, 1);
+      luz.position.set(1, 1, 1).normalize();
+      scene.add(luz);
+
+      crearCanvasTexto();
+
+      const geometry = new THREE.CylinderGeometry(1.2, 1.2, 1.5, 32, 1, true);
+      const material = new THREE.MeshStandardMaterial({
+        map: texture,
+        side: THREE.DoubleSide
+      });
+      mug = new THREE.Mesh(geometry, material);
+      scene.add(mug);
+
+      animate();
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      mug.rotation.y += 0.005;
+      renderer.render(scene, camera);
+    }
+
+    document.getElementById('text').addEventListener('input', (e) => {
+      text = e.target.value;
+      actualizarTexto();
+    });
+
+    document.getElementById('font').addEventListener('change', (e) => {
+      font = e.target.value;
+      actualizarTexto();
+    });
+
+    function descargar() {
+      const enlace = document.createElement('a');
+      enlace.download = 'taza_personalizada.png';
+      enlace.href = renderer.domElement.toDataURL("image/png");
+      enlace.click();
+    }
+
+    init();
+  </script>
+</body>
+</html>
