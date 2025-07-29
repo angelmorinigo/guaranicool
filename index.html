@@ -6,7 +6,7 @@
 <meta http-equiv="cache-control" content="max-age=604800" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="GuaraniCool" content="GuaraniCool personalizados nos dedicamos a darle vida y color a tus ideas Pedidos al (0975) 624 601"/>
-<title>Guaranicool Personalizados - Dinámico</title>
+<title>Guaranicool Personalizados - Versión Final</title>
 
 <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
@@ -63,22 +63,6 @@
     color: #0d6efd;
     font-size: 1.2rem;
   }
-  .footer-bottom {
-    background-color: #343a40;
-    color: #adb5bd;
-    padding: 40px 0;
-  }
-  .footer-bottom h6 {
-    color: #fff;
-  }
-  .footer-bottom a {
-    color: #adb5bd;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .footer-bottom a:hover {
-    color: #fff;
-  }
   .quantity-input {
     max-width: 70px;
     text-align: center;
@@ -91,11 +75,11 @@
 
   /* --- ESTILOS PARA EL FONDO ANIMADO --- */
   .hero-section {
-    position: relative; /* Contenedor principal */
+    position: relative;
     padding: 80px 20px;
     color: white;
     text-align: center;
-    overflow: hidden; /* Para que las imágenes no se salgan */
+    overflow: hidden;
   }
   .hero-bg-slide {
     position: absolute;
@@ -105,14 +89,14 @@
     height: 100%;
     background-size: cover;
     background-position: center;
-    opacity: 0; /* Oculto por defecto */
-    transition: opacity 1.5s ease-in-out; /* La magia del fundido */
-    z-index: 1; /* Detrás del contenido */
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    z-index: 1;
   }
   .hero-bg-slide.active {
-    opacity: 1; /* Visible cuando está activo */
+    opacity: 1;
   }
-  .hero-section::after { /* Capa oscura para que el texto sea legible */
+  .hero-section::after {
     content: '';
     position: absolute;
     top: 0;
@@ -124,7 +108,137 @@
   }
   .hero-content {
     position: relative;
-    z-index: 3; /* El contenido siempre por encima de todo */
+    z-index: 3;
+  }
+
+  /* --- ESTILOS PARA LA SECCIÓN DE PRODUCTOS MEJORADA --- */
+  .product-filters .nav-link {
+    color: #6c757d;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+  }
+  .product-filters .nav-link.active,
+  .product-filters .nav-link:hover {
+    color: #0d6efd;
+    background-color: transparent;
+    border-bottom-color: #0d6efd;
+  }
+  .product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 600;
+  }
+  @keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
+  .product-item {
+    animation: fadeInUp 0.5s ease-in-out forwards;
+  }
+
+  /* --- ESTILOS PARA FOOTER ESTILO INSTAGRAM --- */
+  .footer-instagram {
+    background: linear-gradient(135deg, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #FCAF45);
+    padding: 60px 0 20px 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .footer-instagram::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    top: -100px;
+    left: -100px;
+    animation: float 15s infinite linear;
+  }
+  .footer-instagram::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    bottom: -80px;
+    right: -80px;
+    animation: float 12s infinite linear reverse;
+  }
+  @keyframes float {
+    0% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(20px); }
+    100% { transform: translateY(0) translateX(0); }
+  }
+  .footer-instagram h5 {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+  }
+  .footer-instagram p, .footer-instagram a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  .footer-instagram a:hover {
+    color: white;
+  }
+  .footer-social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.2rem;
+    margin: 0 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  .footer-social-icons a:hover {
+    transform: scale(1.1) translateY(-3px);
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  .footer-bottom-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 20px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .footer-instagram .btn-light {
+    background: linear-gradient(90deg, #833AB4, #C13584, #E1306C);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  .footer-instagram .btn-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  .footer-instagram .btn-light i {
+    margin-right: 8px;
   }
 </style>
 </head>
@@ -187,14 +301,36 @@
 
 <section class="py-5">
   <div class="container">
-    <header class="mb-4">
-      <h3 class="section-title h2">Productos Populares</h3>
+    <header class="text-center mb-5">
+      <h2 class="section-title h1">Productos Populares</h2>
+      <p class="text-muted">Lo que nuestros clientes más eligen.</p>
+      
+      <div class="d-flex justify-content-center mt-4">
+        <ul class="nav nav-pills product-filters">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" data-filter="all">Todo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-filter="remeras">Remeras</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-filter="tazas">Tazas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" data-filter="otros">Otros</a>
+          </li>
+        </ul>
+      </div>
     </header>
+
     <div class="row g-4" id="product-list">
       
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="remeras">
         <div class="card card-product-grid" data-id="1" data-name="Remera personalizada Dama" data-price="50000" data-image="images/items/1.jpg">
-          <a href="#" class="img-wrap"><img src="images/items/1.jpg" class="card-img-top"></a>
+          <a href="#" class="img-wrap position-relative">
+            <span class="badge bg-danger product-badge">OFERTA</span>
+            <img src="images/items/1.jpg" class="card-img-top">
+          </a>
           <div class="card-body">
             <div>
               <h6 class="card-title">Remeras estampadas Dama</h6>
@@ -210,63 +346,72 @@
         </div>
       </div>
       
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
-        <div class="card card-product-grid" data-id="2" data-name="Hoppie con capucha" data-price="90000" data-image="https://via.placeholder.com/300x300.png/343a40/FFFFFF?text=Hoppie">
-          <a href="#" class="img-wrap"><img src="images/items/2.jpg" class="card-img-top"></a>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
+        <div class="card card-product-grid" data-id="2" data-name="Hoppie con capucha" data-price="90000" data-image="images/items/2.jpg">
+          <a href="#" class="img-wrap position-relative">
+            <img src="images/items/2.jpg" class="card-img-top">
+          </a>
           <div class="card-body">
             <div>
               <h6 class="card-title">Hoppie con capucha y bolsillo</h6>
               <p class="price mb-3">90.000 Gs.</p>
             </div>
             <div class="input-group mt-auto">
-              <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-              <input type="number" class="form-control quantity-input" value="1" min="1">
-              <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-              <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
-        <div class="card card-product-grid" data-id="3" data-name="Taza mágica personalizada" data-price="65000" data-image="https://via.placeholder.com/300x300.png/FF5733/FFFFFF?text=Taza+Mágica">
-          <div class="card-body">          <a href="#" class="img-wrap"><img src="images/items/3.jpg" class="card-img-top"></a>
-
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="tazas">
+        <div class="card card-product-grid" data-id="3" data-name="Taza mágica personalizada" data-price="65000" data-image="images/items/3.jpg">
+          <a href="#" class="img-wrap position-relative">
+            <span class="badge bg-success product-badge">NUEVO</span>
+            <img src="images/items/3.jpg" class="card-img-top">
+          </a>
+          <div class="card-body">
             <div>
               <h6 class="card-title">Taza mágica (cambia con calor)</h6>
               <p class="price mb-3">65.000 Gs.</p>
             </div>
             <div class="input-group mt-auto">
-              <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-              <input type="number" class="form-control quantity-input" value="1" min="1">
-              <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-              <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
-        <div class="card card-product-grid" data-id="4" data-name="Kit Tereré Personalizado" data-price="150000" data-image="https://via.placeholder.com/300x300.png/28B463/FFFFFF?text=Kit+Tereré">
-          <a href="#" class="img-wrap"><img src="images/items/4.jpg" class="card-img-top"></a>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
+        <div class="card card-product-grid" data-id="4" data-name="Kit Tereré Personalizado" data-price="150000" data-image="images/items/4.jpg">
+          <a href="#" class="img-wrap position-relative">
+            <img src="images/items/4.jpg" class="card-img-top">
+          </a>
           <div class="card-body">
             <div>
               <h6 class="card-title">Kit de Tereré Completo</h6>
               <p class="price mb-3">150.000 Gs.</p>
             </div>
             <div class="input-group mt-auto">
-              <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-              <input type="number" class="form-control quantity-input" value="1" min="1">
-              <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-              <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                <input type="number" class="form-control quantity-input" value="1" min="1">
+                <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
             </div>
           </div>
         </div>
       </div>
       
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
         <div class="card card-product-grid" data-id="5" data-name="Termo Forrado en Cuero" data-price="180000" data-image="https://via.placeholder.com/300x300.png/D2B48C/FFFFFF?text=Termo">
-          <a href="#" class="img-wrap"><img src="https://via.placeholder.com/300x300.png/D2B48C/FFFFFF?text=Termo" class="card-img-top"></a>
+          <a href="#" class="img-wrap position-relative">
+            <img src="https://via.placeholder.com/300x300.png/D2B48C/FFFFFF?text=Termo" class="card-img-top">
+          </a>
           <div class="card-body">
             <div>
               <h6 class="card-title">Termo Forrado en Cuero</h6>
@@ -282,9 +427,11 @@
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
         <div class="card card-product-grid" data-id="6" data-name="Kepis Personalizado" data-price="45000" data-image="https://via.placeholder.com/300x300.png/0275d8/FFFFFF?text=Kepis">
-          <a href="#" class="img-wrap"><img src="https://via.placeholder.com/300x300.png/0275d8/FFFFFF?text=Kepis" class="card-img-top"></a>
+          <a href="#" class="img-wrap position-relative">
+            <img src="https://via.placeholder.com/300x300.png/0275d8/FFFFFF?text=Kepis" class="card-img-top">
+          </a>
           <div class="card-body">
             <div>
               <h6 class="card-title">Kepis Trucker Personalizado</h6>
@@ -300,9 +447,11 @@
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
         <div class="card card-product-grid" data-id="7" data-name="Llavero Acrílico con Foto" data-price="15000" data-image="https://via.placeholder.com/300x300.png/f0ad4e/FFFFFF?text=Llavero">
-          <a href="#" class="img-wrap"><img src="https://via.placeholder.com/300x300.png/f0ad4e/FFFFFF?text=Llavero" class="card-img-top"></a>
+          <a href="#" class="img-wrap position-relative">
+            <img src="https://via.placeholder.com/300x300.png/f0ad4e/FFFFFF?text=Llavero" class="card-img-top">
+          </a>
           <div class="card-body">
             <div>
               <h6 class="card-title">Llavero Acrílico con Foto</h6>
@@ -318,9 +467,11 @@
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
         <div class="card card-product-grid" data-id="8" data-name="Cojín con Foto 40x40" data-price="85000" data-image="https://via.placeholder.com/300x300.png/d9534f/FFFFFF?text=Cojín">
-          <a href="#" class="img-wrap"><img src="https://via.placeholder.com/300x300.png/d9534f/FFFFFF?text=Cojín" class="card-img-top"></a>
+          <a href="#" class="img-wrap position-relative">
+            <img src="https://via.placeholder.com/300x300.png/d9534f/FFFFFF?text=Cojín" class="card-img-top">
+          </a>
           <div class="card-body">
             <div>
               <h6 class="card-title">Cojín con Foto 40x40cm</h6>
@@ -336,9 +487,9 @@
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
         <div class="card card-product-grid" data-id="9" data-name="Agenda Personalizada" data-price="75000" data-image="https://via.placeholder.com/300x300.png/5bc0de/FFFFFF?text=Agenda">
-            <a href="#" class="img-wrap"><img src="https://via.placeholder.com/300x300.png/5bc0de/FFFFFF?text=Agenda" class="card-img-top"></a>
+            <a href="#" class="img-wrap position-relative"><img src="https://via.placeholder.com/300x300.png/5bc0de/FFFFFF?text=Agenda" class="card-img-top"></a>
             <div class="card-body">
                 <div>
                     <h6 class="card-title">Agenda 2026 Personalizada</h6>
@@ -354,9 +505,9 @@
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
         <div class="card card-product-grid" data-id="10" data-name="Mousepad Gamer" data-price="55000" data-image="https://via.placeholder.com/300x300.png/1d2a38/FFFFFF?text=Mousepad">
-            <a href="#" class="img-wrap"><img src="https://via.placeholder.com/300x300.png/1d2a38/FFFFFF?text=Mousepad" class="card-img-top"></a>
+            <a href="#" class="img-wrap position-relative"><img src="https://via.placeholder.com/300x300.png/1d2a38/FFFFFF?text=Mousepad" class="card-img-top"></a>
             <div class="card-body">
                 <div>
                     <h6 class="card-title">Mousepad Gamer XL Personalizado</h6>
@@ -372,9 +523,9 @@
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
-        <div class="card card-product-grid" data-id="11" data-name="Body de Bebé" data-price="40000" data-image="https://via.placeholder.com/300x300.png/F7CAC9/FFFFFF?text=Body+Bebé">
-            <a href="#" class="img-wrap"><img src="https://via.placeholder.com/300x300.png/F7CAC9/000000?text=Body+Bebé" class="card-img-top"></a>
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="remeras">
+        <div class="card card-product-grid" data-id="11" data-name="Body de Bebé" data-price="40000" data-image="https://via.placeholder.com/300x300.png/F7CAC9/000000?text=Body+Bebé">
+            <a href="#" class="img-wrap position-relative"><img src="https://via.placeholder.com/300x300.png/F7CAC9/000000?text=Body+Bebé" class="card-img-top"></a>
             <div class="card-body">
                 <div>
                     <h6 class="card-title">Body de Bebé "Mi Primera Hinchada"</h6>
@@ -390,9 +541,9 @@
         </div>
       </div>
 
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="tazas">
         <div class="card card-product-grid" data-id="12" data-name="Rompecabezas con Foto" data-price="50000" data-image="https://via.placeholder.com/300x300.png/92A8D1/FFFFFF?text=Puzzle">
-            <a href="#" class="img-wrap"><img src="https://via.placeholder.com/300x300.png/92A8D1/FFFFFF?text=Puzzle" class="card-img-top"></a>
+            <a href="#" class="img-wrap position-relative"><img src="https://via.placeholder.com/300x300.png/92A8D1/FFFFFF?text=Puzzle" class="card-img-top"></a>
             <div class="card-body">
                 <div>
                     <h6 class="card-title">Rompecabezas A4 con Foto</h6>
@@ -411,116 +562,6 @@
     </div>
   </div>
 </section>
-
-
-<style>
-    .footer-instagram {
-        /* El degradado icónico de Instagram */
-        background: linear-gradient(135deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
-        padding: 60px 0 20px 0;
-        color: white;
-        position: relative;
-        overflow: hidden; /* Para los efectos de fondo */
-    }
-
-    /* Efecto de círculos animados en el fondo */
-    .footer-instagram::before {
-        content: '';
-        position: absolute;
-        width: 300px;
-        height: 300px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.1);
-        top: -100px;
-        left: -100px;
-        animation: float 15s infinite linear;
-    }
-
-    .footer-instagram::after {
-        content: '';
-        position: absolute;
-        width: 200px;
-        height: 200px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.15);
-        bottom: -80px;
-        right: -80px;
-        animation: float 12s infinite linear reverse;
-    }
-
-    @keyframes float {
-        0% { transform: translateY(0) translateX(0); }
-        50% { transform: translateY(-20px) translateX(20px); }
-        100% { transform: translateY(0) translateX(0); }
-    }
-    /* Fin del efecto de fondo */
-
-    .footer-instagram h5 {
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 20px;
-    }
-
-    .footer-instagram p, .footer-instagram a {
-        color: rgba(255, 255, 255, 0.9);
-        text-decoration: none;
-        font-size: 1rem;
-    }
-
-    .footer-instagram a:hover {
-        color: white;
-    }
-
-    .footer-social-icons a {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 45px;
-        height: 45px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.2);
-        color: white;
-        font-size: 1.2rem;
-        margin: 0 8px;
-        transition: transform 0.3s ease, background-color 0.3s ease;
-    }
-
-    .footer-social-icons a:hover {
-        transform: scale(1.1) translateY(-3px);
-        background-color: rgba(255, 255, 255, 0.3);
-    }
-
-    .footer-bottom-bar {
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        padding-top: 20px;
-        margin-top: 40px;
-        text-align: center;
-        font-size: 0.9rem;
-        color: rgba(255, 255, 255, 0.8);
-    }
-
-    /* --- NUEVOS ESTILOS PARA EL BOTÓN DE INSTAGRAM --- */
-    .footer-instagram .btn-light {
-        background: linear-gradient(90deg, #833AB4, #C13584, #E1306C);
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        font-weight: 600;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .footer-instagram .btn-light:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    .footer-instagram .btn-light i {
-        margin-right: 8px;
-    }
-</style>
 
 <footer class="footer-instagram">
     <div class="container">
@@ -543,7 +584,7 @@
                 </p>
                 <p>
                     <i class="fa-solid fa-envelope me-2"></i>
-                    <a href="mailto:guaranicool123@gmail.com">guaranicool123@gmail.com</a>
+                    <a href="mailto:angelmorinigo2020@gmail.com">angelmorinigo2020@gmail.com</a>
                 </p>
             </div>
 
@@ -559,7 +600,7 @@
                     <a href="https://wa.me/+595975624601" aria-label="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
-                    </div>
+                </div>
             </div>
 
         </div>
@@ -594,15 +635,14 @@
 <script>
 $(document).ready(function() {
     
-    // --- NUEVO: LÓGICA PARA EL FONDO ANIMADO ---
+    // --- LÓGICA PARA EL FONDO ANIMADO ---
     const heroImages = [
-        'https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1288&q=80',
-        'https://images.unsplash.com/photo-1544465544-1b71aee9dfa3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80',
-        'https://images.unsplash.com/photo-1552069027-02758f3355db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80'
+        'https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1288&q=80',
+        'https://images.unsplash.com/photo-1544465544-1b71aee9dfa3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1287&q=80',
+        'https://images.unsplash.com/photo-1552069027-02758f3355db?ixlib=rb-4.0.3&auto=format&fit=crop&w=1287&q=80'
     ];
     const heroContainer = $('#hero-bg-container');
     
-    // Crear los divs para cada imagen
     heroImages.forEach(imgUrl => {
         const slide = $('<div></div>')
             .addClass('hero-bg-slide')
@@ -612,19 +652,35 @@ $(document).ready(function() {
 
     let currentSlide = 0;
     const slides = $('.hero-bg-slide');
-    
-    // Activar el primer slide
     slides.eq(currentSlide).addClass('active');
 
-    // Cambiar de slide cada 5 segundos
     setInterval(() => {
         slides.eq(currentSlide).removeClass('active');
         currentSlide = (currentSlide + 1) % slides.length;
         slides.eq(currentSlide).addClass('active');
     }, 5000);
     
+    // --- LÓGICA PARA LOS FILTROS DE PRODUCTOS ---
+    $('.product-filters .nav-link').on('click', function(e) {
+        e.preventDefault();
+        $('.product-filters .nav-link').removeClass('active');
+        $(this).addClass('active');
 
-    // --- CÓDIGO DEL CARRITO (SIN CAMBIOS) ---
+        const filter = $(this).data('filter');
+        const productItems = $('.product-item');
+
+        productItems.parent().fadeOut(200);
+
+        setTimeout(function() {
+            if (filter === 'all') {
+                productItems.parent().fadeIn(300);
+            } else {
+                productItems.filter(`[data-category="${filter}"]`).parent().fadeIn(300);
+            }
+        }, 200);
+    });
+
+    // --- CÓDIGO DEL CARRITO ---
     let cart = [];
 
     function formatCurrency(number) {
@@ -655,7 +711,7 @@ $(document).ready(function() {
             id: card.data('id'),
             name: card.data('name'),
             price: card.data('price'),
-            image: card.data('image'),
+            image: card.find('.card-img-top').attr('src'),
             quantity: quantity
         };
 
@@ -667,9 +723,11 @@ $(document).ready(function() {
         }
         
         const button = $(this);
-        button.html('<i class="fa-solid fa-check"></i>').parent().addClass('btn-success-group');
+        const originalIcon = button.html();
+        button.html('<i class="fa-solid fa-check"></i>');
+        
         setTimeout(() => {
-            button.html('<i class="fa-solid fa-cart-plus"></i>').parent().removeClass('btn-success-group');
+            button.html(originalIcon);
         }, 1500);
 
         quantityInput.val(1);
