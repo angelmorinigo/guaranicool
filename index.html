@@ -6,7 +6,7 @@
 <meta http-equiv="cache-control" content="max-age=604800" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="GuaraniCool" content="GuaraniCool personalizados nos dedicamos a darle vida y color a tus ideas Pedidos al (0975) 624 601"/>
-<title>Guaranicool Personalizados - Versión Final</title>
+<title>Guaranicool Personalizados - Versión Sidebar Categorías</title>
 
 <link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon">
 
@@ -25,7 +25,6 @@
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   }
-
 
   .card-product-grid {
     display: flex;
@@ -75,7 +74,7 @@
     cursor: pointer;
   }
 
-  /* --- ESTILOS PARA EL FONDO ANIMADO --- */
+  /* --- FONDO ANIMADO HERO --- */
   .hero-section {
     position: relative;
     padding: 80px 20px;
@@ -85,163 +84,107 @@
   }
   .hero-bg-slide {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background-size: cover;
     background-position: center;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
     z-index: 1;
   }
-  .hero-bg-slide.active {
-    opacity: 1;
-  }
+  .hero-bg-slide.active { opacity: 1; }
   .hero-section::after {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    position: absolute; inset: 0;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
   }
-  .hero-content {
-    position: relative;
-    z-index: 3;
-  }
+  .hero-content { position: relative; z-index: 3; }
 
-  /* --- ESTILOS PARA LA SECCIÓN DE PRODUCTOS MEJORADA --- */
-  .product-filters .nav-link {
-    color: #6c757d;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border-bottom: 2px solid transparent;
-    border-radius: 0;
-  }
-  .product-filters .nav-link.active,
-  .product-filters .nav-link:hover {
-    color: #0d6efd;
-    background-color: transparent;
-    border-bottom-color: #0d6efd;
-  }
   .product-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 10;
-    font-size: 0.8rem;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-weight: 600;
+    position: absolute; top: 10px; left: 10px; z-index: 10;
+    font-size: 0.8rem; padding: 5px 10px; border-radius: 5px; font-weight: 600;
   }
   @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-  .product-item {
-    animation: fadeInUp 0.5s ease-in-out forwards;
+  .product-item { animation: fadeInUp 0.5s ease-in-out forwards; }
+
+  /* === SIDEBAR DE CATEGORÍAS === */
+  .categories-sidebar {
+    position: sticky;
+    top: 90px;
+    max-height: calc(100vh - 110px);
+    overflow: auto;
+    border: 1px solid #e9ecef;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  }
+  .categories-sidebar .list-group-item {
+    border: 0; border-radius: 0;
+    padding: .75rem 1rem; cursor: pointer;
+  }
+  .categories-sidebar .list-group-item.active {
+    background: #e9f2ff; color: #0d6efd; font-weight: 600;
+  }
+  .categories-sidebar .toggle-sub { transition: transform .15s ease; }
+  .categories-sidebar .list-group-item.active .toggle-sub { transform: rotate(180deg); }
+
+  .categories-sidebar .subcat { display: none; padding-left: .5rem; }
+  .categories-sidebar .subcat a {
+    display: block; padding: .35rem .75rem;
+    border-radius: 8px; color: #6c757d; text-decoration: none;
+  }
+  .categories-sidebar .subcat a.active,
+  .categories-sidebar .subcat a:hover {
+    background: #f1f5ff; color: #0d6efd;
   }
 
-  /* --- ESTILOS PARA FOOTER ESTILO INSTAGRAM --- */
+  @media (max-width: 991px) {
+    .sidebar-trigger { position: sticky; top: 60px; z-index: 1030; }
+  }
+
+  /* --- FOOTER INSTAGRAM --- */
   .footer-instagram {
     background: linear-gradient(135deg, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #FCAF45);
-    padding: 60px 0 20px 0;
-    color: white;
-    position: relative;
-    overflow: hidden;
+    padding: 60px 0 20px 0; color: white; position: relative; overflow: hidden;
+  }
+  .footer-instagram::before, .footer-instagram::after {
+    content: ''; position: absolute; border-radius: 50%;
   }
   .footer-instagram::before {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    top: -100px;
-    left: -100px;
-    animation: float 15s infinite linear;
+    width: 300px; height: 300px; background-color: rgba(255,255,255,.1);
+    top: -100px; left: -100px; animation: float 15s infinite linear;
   }
   .footer-instagram::after {
-    content: '';
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.15);
-    bottom: -80px;
-    right: -80px;
-    animation: float 12s infinite linear reverse;
+    width: 200px; height: 200px; background-color: rgba(255,255,255,.15);
+    bottom: -80px; right: -80px; animation: float 12s infinite linear reverse;
   }
   @keyframes float {
     0% { transform: translateY(0) translateX(0); }
     50% { transform: translateY(-20px) translateX(20px); }
     100% { transform: translateY(0) translateX(0); }
   }
-  .footer-instagram h5 {
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-  }
-  .footer-instagram p, .footer-instagram a {
-    color: rgba(255, 255, 255, 0.9);
-    text-decoration: none;
-    font-size: 1rem;
-  }
-  .footer-instagram a:hover {
-    color: white;
-  }
+  .footer-instagram h5 { font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+  .footer-instagram p, .footer-instagram a { color: rgba(255,255,255,.9); text-decoration: none; font-size: 1rem; }
+  .footer-instagram a:hover { color: white; }
   .footer-social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    font-size: 1.2rem;
-    margin: 0 8px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: inline-flex; justify-content: center; align-items: center;
+    width: 45px; height: 45px; border-radius: 50%;
+    background-color: rgba(255,255,255,.2); color: white; font-size: 1.2rem;
+    margin: 0 8px; transition: transform .3s ease, background-color .3s ease;
   }
-  .footer-social-icons a:hover {
-    transform: scale(1.1) translateY(-3px);
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-  .footer-bottom-bar {
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    padding-top: 20px;
-    margin-top: 40px;
-    text-align: center;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
-  }
+  .footer-social-icons a:hover { transform: scale(1.1) translateY(-3px); background-color: rgba(255,255,255,.3); }
+  .footer-bottom-bar { border-top: 1px solid rgba(255,255,255,.2); padding-top: 20px; margin-top: 40px; text-align: center; font-size: .9rem; color: rgba(255,255,255,.8); }
   .footer-instagram .btn-light {
-    background: linear-gradient(90deg, #833AB4, #C13584, #E1306C);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(90deg, #833AB4, #C13584, #E1306C); color: white; border: none;
+    padding: 10px 20px; border-radius: 5px; font-weight: 600; transition: transform .3s ease, box-shadow .3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
   }
-  .footer-instagram .btn-light:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  }
-  .footer-instagram .btn-light i {
-    margin-right: 8px;
-  }
+  .footer-instagram .btn-light:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,.3); }
+  .footer-instagram .btn-light i { margin-right: 8px; }
 </style>
 </head>
 <body>
@@ -250,12 +193,12 @@
   <section class="header-main border-bottom py-2">
     <div class="container d-flex justify-content-between align-items-center">
       <a href="index.html" class="d-flex align-items-center text-decoration-none">
-        <img src="images/logo.png" height="40" class="me-2 d-none d-sm-block">
-        <img src="images/logod.png" height="15">
+        <img src="images/logo.png" height="40" class="me-2 d-none d-sm-block" alt="GuaraniCool">
+        <img src="images/logod.png" height="15" alt="GuaraniCool">
       </a>
-      <form class="d-none d-lg-flex w-50">
-        <input class="form-control me-2" type="search" placeholder="Buscar productos...">
-        <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i></button>
+      <form class="d-none d-lg-flex w-50" onsubmit="return false;">
+        <input id="search-input" class="form-control me-2" type="search" placeholder="Buscar productos...">
+        <button id="search-btn" class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
       </form>
       <div>
         <a href="#" class="btn btn-light position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
@@ -278,11 +221,7 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fa fa-bars me-1"></i> Categorías</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Remeras</a></li>
-            <li><a class="dropdown-item" href="#">Tazas y Vasos</a></li>
-            <li><a class="dropdown-item" href="#">Termos</a></li>
-            <li><a class="dropdown-item" href="#">Llaveros</a></li>
-            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#categorias">Ver sidebar</a></li>
             <li><a class="dropdown-item" href="https://guaranicool.com/sheet-afumi/index.html">AFUMI</a></li>
           </ul>
         </li>
@@ -295,326 +234,450 @@
 </nav>
 
 <section class="hero-section">
-    <div id="hero-bg-container"></div>
-    <div class="hero-content">
-        <h1 class="display-5 fw-bold">Dale Vida y Color a tus Ideas</h1>
-        <p class="lead">Productos personalizados únicos para vos.</p>
-        <a href="https://wa.me/+595975624601" class="btn btn-success btn-lg mt-2">Contactar por WhatsApp</a>
-    </div>
-</section>
-
-<section class="py-5">
-  <div class="container">
-    <header class="text-center mb-5">
-      <h2 class="section-title h1">Inspiración de quienes ya eligieron GuaraniCool</h2>
-     
-      
-      <div class="d-flex justify-content-center mt-4">
-        <ul class="nav nav-pills product-filters">
-          <li class="nav-item">
-            <a class="nav-link active" href="#" data-filter="all">Todo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-filter="remeras">Remeras</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-filter="tazas">Tazas</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-filter="otros">Otros</a>
-          </li>
-        </ul>
-      </div>
-    </header>
-
-    <div class="row g-4" id="product-list">
-      
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="remeras">
-        <div class="card card-product-grid" data-id="1" data-name="Remera personalizada Dama" data-price="50000" data-image="images/items/1.jpg">
-          <a href="#" class="img-wrap position-relative">
-            <span class="badge bg-danger product-badge">OFERTA</span>
-            <img src="images/items/1.jpg" class="card-img-top">
-          </a>
-          <div class="card-body">
-            <div>
-              <h6 class="card-title">Remeras estampadas Dama</h6>
-              <p class="price mb-3">60.000 Gs.</p>
-            </div>
-            <div class="input-group mt-auto">
-              <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-              <input type="number" class="form-control quantity-input" value="1" min="1">
-              <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-              <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
-        <div class="card card-product-grid" data-id="2" data-name="Hoppie con capucha" data-price="90000" data-image="images/items/2.jpg">
-          <a href="#" class="img-wrap position-relative">
-            <img src="images/items/2.jpg" class="card-img-top">
-          </a>
-          <div class="card-body">
-            <div>
-              <h6 class="card-title">Hoppie personalizado</h6>
-              <p class="price mb-3">90.000 Gs.</p>
-            </div>
-            <div class="input-group mt-auto">
-                <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-                <input type="number" class="form-control quantity-input" value="1" min="1">
-                <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-                <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="tazas">
-        <div class="card card-product-grid" data-id="3" data-name="Taza mágica personalizada" data-price="65000" data-image="images/items/3.jpg">
-          <a href="#" class="img-wrap position-relative">
-            <span class="badge bg-success product-badge">NUEVO</span>
-            <img src="images/items/3.jpg" class="card-img-top">
-          </a>
-          <div class="card-body">
-            <div>
-              <h6 class="card-title">Taza mágica (cambia de color con calor)</h6>
-              <p class="price mb-3">65.000 Gs.</p>
-            </div>
-            <div class="input-group mt-auto">
-                <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-                <input type="number" class="form-control quantity-input" value="1" min="1">
-                <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-                <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
-        <div class="card card-product-grid" data-id="4" data-name="Kit Tereré Personalizado" data-price="150000" data-image="images/items/4.jpg">
-          <a href="#" class="img-wrap position-relative">
-            <img src="images/items/4.jpg" class="card-img-top">
-          </a>
-          <div class="card-body">
-            <div>
-              <h6 class="card-title">Kit de Tereré Completo</h6>
-              <p class="price mb-3">150.000 Gs.</p>
-            </div>
-            <div class="input-group mt-auto">
-                <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-                <input type="number" class="form-control quantity-input" value="1" min="1">
-                <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-                <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
-        <div class="card card-product-grid" data-id="5" data-name="Termo Forrado en Cuero" data-price="180000" data-image="https://via.placeholder.com/300x300.png/D2B48C/FFFFFF?text=Termo">
-          <a href="#" class="img-wrap position-relative">
-            <img src="https://via.placeholder.com/300x300.png/D2B48C/FFFFFF?text=Termo" class="card-img-top">
-          </a>
-          <div class="card-body">
-            <div>
-              <h6 class="card-title">Termo Forrado en Cuero</h6>
-              <p class="price mb-3">180.000 Gs.</p>
-            </div>
-            <div class="input-group mt-auto">
-              <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-              <input type="number" class="form-control quantity-input" value="1" min="1">
-              <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-              <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
-        <div class="card card-product-grid" data-id="6" data-name="Kepis Personalizado" data-price="45000" data-image="https://via.placeholder.com/300x300.png/0275d8/FFFFFF?text=Kepis">
-          <a href="#" class="img-wrap position-relative">
-            <img src="https://via.placeholder.com/300x300.png/0275d8/FFFFFF?text=Kepis" class="card-img-top">
-          </a>
-          <div class="card-body">
-            <div>
-              <h6 class="card-title">Kepis Trucker Personalizado</h6>
-              <p class="price mb-3">45.000 Gs.</p>
-            </div>
-            <div class="input-group mt-auto">
-              <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-              <input type="number" class="form-control quantity-input" value="1" min="1">
-              <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-              <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
-        <div class="card card-product-grid" data-id="7" data-name="Llavero Acrílico con Foto" data-price="15000" data-image="https://via.placeholder.com/300x300.png/f0ad4e/FFFFFF?text=Llavero">
-          <a href="#" class="img-wrap position-relative">
-            <img src="https://via.placeholder.com/300x300.png/f0ad4e/FFFFFF?text=Llavero" class="card-img-top">
-          </a>
-          <div class="card-body">
-            <div>
-              <h6 class="card-title">Llavero Acrílico con Foto</h6>
-              <p class="price mb-3">15.000 Gs.</p>
-            </div>
-            <div class="input-group mt-auto">
-              <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-              <input type="number" class="form-control quantity-input" value="1" min="1">
-              <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-              <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
-        <div class="card card-product-grid" data-id="8" data-name="Cojín con Foto 40x40" data-price="85000" data-image="https://via.placeholder.com/300x300.png/d9534f/FFFFFF?text=Cojín">
-          <a href="#" class="img-wrap position-relative">
-            <img src="https://via.placeholder.com/300x300.png/d9534f/FFFFFF?text=Cojín" class="card-img-top">
-          </a>
-          <div class="card-body">
-            <div>
-              <h6 class="card-title">Cojín con Foto 40x40cm</h6>
-              <p class="price mb-3">85.000 Gs.</p>
-            </div>
-            <div class="input-group mt-auto">
-              <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-              <input type="number" class="form-control quantity-input" value="1" min="1">
-              <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-              <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
-        <div class="card card-product-grid" data-id="9" data-name="Agenda Personalizada" data-price="75000" data-image="https://via.placeholder.com/300x300.png/5bc0de/FFFFFF?text=Agenda">
-            <a href="#" class="img-wrap position-relative"><img src="https://via.placeholder.com/300x300.png/5bc0de/FFFFFF?text=Agenda" class="card-img-top"></a>
-            <div class="card-body">
-                <div>
-                    <h6 class="card-title">Agenda 2026 Personalizada</h6>
-                    <p class="price mb-3">75.000 Gs.</p>
-                </div>
-                <div class="input-group mt-auto">
-                    <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-                    <input type="number" class="form-control quantity-input" value="1" min="1">
-                    <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-                    <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
-                </div>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="otros">
-        <div class="card card-product-grid" data-id="10" data-name="Mousepad Gamer" data-price="55000" data-image="https://via.placeholder.com/300x300.png/1d2a38/FFFFFF?text=Mousepad">
-            <a href="#" class="img-wrap position-relative"><img src="https://via.placeholder.com/300x300.png/1d2a38/FFFFFF?text=Mousepad" class="card-img-top"></a>
-            <div class="card-body">
-                <div>
-                    <h6 class="card-title">Mousepad Gamer XL Personalizado</h6>
-                    <p class="price mb-3">55.000 Gs.</p>
-                </div>
-                <div class="input-group mt-auto">
-                    <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-                    <input type="number" class="form-control quantity-input" value="1" min="1">
-                    <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-                    <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
-                </div>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="remeras">
-        <div class="card card-product-grid" data-id="11" data-name="Body de Bebé" data-price="40000" data-image="https://via.placeholder.com/300x300.png/F7CAC9/000000?text=Body+Bebé">
-            <a href="#" class="img-wrap position-relative"><img src="https://via.placeholder.com/300x300.png/F7CAC9/000000?text=Body+Bebé" class="card-img-top"></a>
-            <div class="card-body">
-                <div>
-                    <h6 class="card-title">Body de Bebé "Mi Primera Hinchada"</h6>
-                    <p class="price mb-3">40.000 Gs.</p>
-                </div>
-                <div class="input-group mt-auto">
-                    <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-                    <input type="number" class="form-control quantity-input" value="1" min="1">
-                    <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-                    <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
-                </div>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="tazas">
-        <div class="card card-product-grid" data-id="12" data-name="Rompecabezas con Foto" data-price="50000" data-image="https://via.placeholder.com/300x300.png/92A8D1/FFFFFF?text=Puzzle">
-            <a href="#" class="img-wrap position-relative"><img src="https://via.placeholder.com/300x300.png/92A8D1/FFFFFF?text=Puzzle" class="card-img-top"></a>
-            <div class="card-body">
-                <div>
-                    <h6 class="card-title">Rompecabezas A4 con Foto</h6>
-                    <p class="price mb-3">50.000 Gs.</p>
-                </div>
-                <div class="input-group mt-auto">
-                    <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
-                    <input type="number" class="form-control quantity-input" value="1" min="1">
-                    <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
-                    <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
-                </div>
-            </div>
-        </div>
-      </div>
-      
-    </div>
+  <div id="hero-bg-container"></div>
+  <div class="hero-content">
+    <h1 class="display-5 fw-bold">Dale Vida y Color a tus Ideas</h1>
+    <p class="lead">Productos personalizados únicos para vos.</p>
+    <a href="https://wa.me/+595975624601" class="btn btn-success btn-lg mt-2">Contactar por WhatsApp</a>
   </div>
 </section>
 
-<footer class="footer-instagram">
-    <div class="container">
-        <div class="row gy-5 text-center">
-            
-            <div class="col-lg-4">
-             
-                <h5>¡Síguenos en Instagram!</h5>
-                <p>Enterate de nuestras novedades y promociones exclusivas.</p>
-                <a href="https://www.instagram.com/guaranicoolpersonalizados/" class="btn btn-light mt-2">
-                    <i class="fab fa-instagram me-2"></i> @guaranicoolpersonalizados
-                </a>
-            </div>
+<section class="py-5" id="categorias">
+  <div class="container">
+    <header class="text-center mb-4">
+      <h2 class="section-title h1">Inspiración de quienes ya eligieron GuaraniCool</h2>
+    </header>
 
-            <div class="col-lg-4">
-                <h5>Contacto Directo</h5>
-                <p class="mb-2">
-                    <i class="fa-brands fa-whatsapp me-2"></i>
-                    <a href="https://wa.me/+595975624601" target="_blank">(0975) 624 601</a>
-                </p>
-                <p>
-                    <i class="fa-solid fa-envelope me-2"></i>
-                    <a href="mailto:angelmorinigo2020@gmail.com">angelmorinigo2020@gmail.com</a>
-                </p>
-            </div>
-
-            <div class="col-lg-4">
-                <h5>Nuestras Redes</h5>
-                <div class="footer-social-icons mt-3">
-                    <a href="https://www.instagram.com/guaranicoolpersonalizados/" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.facebook.com/guaranicoolpersonalizados" aria-label="Facebook">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://wa.me/+595975624601" aria-label="WhatsApp">
-                        <i class="fab fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="footer-bottom-bar">
-            <p class="mb-0">&copy; 2025 Guaranicool Personalizados. Creado con ❤️ en Paraguay.</p>
-        </div>
+    <!-- Botón para abrir el sidebar en móvil -->
+    <div class="sidebar-trigger d-lg-none mb-3 text-center">
+      <button class="btn btn-outline-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCats">
+        <i class="fa fa-bars me-2"></i> Categorías
+      </button>
     </div>
+
+    <div class="row">
+      <!-- SIDEBAR: Desktop -->
+      <aside class="col-lg-3 d-none d-lg-block">
+        <div class="categories-sidebar p-3">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <h6 class="mb-0 text-uppercase text-muted">Categorías</h6>
+            <a class="small text-decoration-none text-primary" href="#" id="filter-all" data-filter="all">Ver todo</a>
+          </div>
+
+          <div class="list-group" id="cat-list">
+            <!-- Remeras -->
+            <div class="list-group-item d-flex justify-content-between align-items-center" data-cat="remeras">
+              <span><i class="fa-solid fa-shirt me-2"></i>Remeras</span>
+              <i class="fa fa-chevron-down small toggle-sub"></i>
+            </div>
+            <div class="subcat" data-parent="remeras">
+              <a href="#" data-subcat="hombre">Hombre</a>
+              <a href="#" data-subcat="mujer">Mujer</a>
+              <a href="#" data-subcat="bebe">Bebé / Kids</a>
+            </div>
+
+            <!-- Tazas y Vasos -->
+            <div class="list-group-item d-flex justify-content-between align-items-center" data-cat="tazas">
+              <span><i class="fa-solid fa-mug-hot me-2"></i>Tazas y Vasos</span>
+              <i class="fa fa-chevron-down small toggle-sub"></i>
+            </div>
+            <div class="subcat" data-parent="tazas">
+              <a href="#" data-subcat="magicas">Mágicas</a>
+              <a href="#" data-subcat="clasicas">Clásicas</a>
+              <a href="#" data-subcat="termicas">Térmicas</a>
+            </div>
+
+            <!-- Tereré y Termos -->
+            <div class="list-group-item d-flex justify-content-between align-items-center" data-cat="terere">
+              <span><i class="fa-solid fa-bottle-water me-2"></i>Tereré y Termos</span>
+              <i class="fa fa-chevron-down small toggle-sub"></i>
+            </div>
+            <div class="subcat" data-parent="terere">
+              <a href="#" data-subcat="kits">Kits de Tereré</a>
+              <a href="#" data-subcat="termos">Termos</a>
+              <a href="#" data-subcat="vasos">Vasos / Guampas</a>
+            </div>
+
+            <!-- Accesorios -->
+            <div class="list-group-item d-flex justify-content-between align-items-center" data-cat="accesorios">
+              <span><i class="fa-regular fa-gem me-2"></i>Accesorios</span>
+              <i class="fa fa-chevron-down small toggle-sub"></i>
+            </div>
+            <div class="subcat" data-parent="accesorios">
+              <a href="#" data-subcat="llaveros">Llaveros</a>
+              <a href="#" data-subcat="gorras">Gorras / Kepis</a>
+              <a href="#" data-subcat="cojines">Cojines</a>
+              <a href="#" data-subcat="agendas">Agendas</a>
+              <a href="#" data-subcat="mousepads">Mousepads</a>
+              <a href="#" data-subcat="puzzles">Puzzles</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- OFFCANVAS: Mobile (mismo contenido del sidebar) -->
+      <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="offcanvasCats">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">Categorías</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="categories-sidebar p-2" style="position:static;max-height:unset;box-shadow:none;">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h6 class="mb-0 text-uppercase text-muted">Categorías</h6>
+              <a class="small text-decoration-none text-primary" href="#" id="filter-all-mobile" data-filter="all">Ver todo</a>
+            </div>
+            <div class="list-group" id="cat-list-mobile">
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-cat="remeras">
+                <span><i class="fa-solid fa-shirt me-2"></i>Remeras</span>
+                <i class="fa fa-chevron-down small toggle-sub"></i>
+              </div>
+              <div class="subcat" data-parent="remeras">
+                <a href="#" data-subcat="hombre">Hombre</a>
+                <a href="#" data-subcat="mujer">Mujer</a>
+                <a href="#" data-subcat="bebe">Bebé / Kids</a>
+              </div>
+
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-cat="tazas">
+                <span><i class="fa-solid fa-mug-hot me-2"></i>Tazas y Vasos</span>
+                <i class="fa fa-chevron-down small toggle-sub"></i>
+              </div>
+              <div class="subcat" data-parent="tazas">
+                <a href="#" data-subcat="magicas">Mágicas</a>
+                <a href="#" data-subcat="clasicas">Clásicas</a>
+                <a href="#" data-subcat="termicas">Térmicas</a>
+              </div>
+
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-cat="terere">
+                <span><i class="fa-solid fa-bottle-water me-2"></i>Tereré y Termos</span>
+                <i class="fa fa-chevron-down small toggle-sub"></i>
+              </div>
+              <div class="subcat" data-parent="terere">
+                <a href="#" data-subcat="kits">Kits de Tereré</a>
+                <a href="#" data-subcat="termos">Termos</a>
+                <a href="#" data-subcat="vasos">Vasos / Guampas</a>
+              </div>
+
+              <div class="list-group-item d-flex justify-content-between align-items-center" data-cat="accesorios">
+                <span><i class="fa-regular fa-gem me-2"></i>Accesorios</span>
+                <i class="fa fa-chevron-down small toggle-sub"></i>
+              </div>
+              <div class="subcat" data-parent="accesorios">
+                <a href="#" data-subcat="llaveros">Llaveros</a>
+                <a href="#" data-subcat="gorras">Gorras / Kepis</a>
+                <a href="#" data-subcat="cojines">Cojines</a>
+                <a href="#" data-subcat="agendas">Agendas</a>
+                <a href="#" data-subcat="mousepads">Mousepads</a>
+                <a href="#" data-subcat="puzzles">Puzzles</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LISTA DE PRODUCTOS -->
+      <div class="col-lg-9">
+        <div class="row g-4" id="product-list">
+          <!-- Remera Dama -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="remeras" data-subcategory="mujer">
+            <div class="card card-product-grid" data-id="1" data-name="Remera personalizada Dama" data-price="60000" data-image="images/items/1.jpg">
+              <a href="#" class="img-wrap position-relative">
+                <span class="badge bg-danger product-badge">OFERTA</span>
+                <img src="images/items/1.jpg" class="card-img-top" alt="Remera Dama">
+              </a>
+              <div class="card-body">
+                <div>
+                  <h6 class="card-title">Remeras estampadas Dama</h6>
+                  <p class="price mb-3">60.000 Gs.</p>
+                </div>
+                <div class="input-group mt-auto">
+                  <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                  <input type="number" class="form-control quantity-input" value="1" min="1">
+                  <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                  <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hoppie (remeras/hombre) -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="remeras" data-subcategory="hombre">
+            <div class="card card-product-grid" data-id="2" data-name="Hoppie con capucha" data-price="90000" data-image="images/items/2.jpg">
+              <a href="#" class="img-wrap position-relative">
+                <img src="images/items/2.jpg" class="card-img-top" alt="Hoppie">
+              </a>
+              <div class="card-body">
+                <div>
+                  <h6 class="card-title">Hoppie personalizado</h6>
+                  <p class="price mb-3">90.000 Gs.</p>
+                </div>
+                <div class="input-group mt-auto">
+                  <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                  <input type="number" class="form-control quantity-input" value="1" min="1">
+                  <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                  <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Taza mágica -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="tazas" data-subcategory="magicas">
+            <div class="card card-product-grid" data-id="3" data-name="Taza mágica personalizada" data-price="65000" data-image="images/items/3.jpg">
+              <a href="#" class="img-wrap position-relative">
+                <span class="badge bg-success product-badge">NUEVO</span>
+                <img src="images/items/3.jpg" class="card-img-top" alt="Taza Mágica">
+              </a>
+              <div class="card-body">
+                <div>
+                  <h6 class="card-title">Taza mágica (cambia de color)</h6>
+                  <p class="price mb-3">65.000 Gs.</p>
+                </div>
+                <div class="input-group mt-auto">
+                  <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                  <input type="number" class="form-control quantity-input" value="1" min="1">
+                  <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                  <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kit Tereré -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="terere" data-subcategory="kits">
+            <div class="card card-product-grid" data-id="4" data-name="Kit Tereré Personalizado" data-price="150000" data-image="images/items/4.jpg">
+              <a href="#" class="img-wrap position-relative">
+                <img src="images/items/4.jpg" class="card-img-top" alt="Kit Tereré">
+              </a>
+              <div class="card-body">
+                <div>
+                  <h6 class="card-title">Kit de Tereré Completo</h6>
+                  <p class="price mb-3">150.000 Gs.</p>
+                </div>
+                <div class="input-group mt-auto">
+                  <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                  <input type="number" class="form-control quantity-input" value="1" min="1">
+                  <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                  <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Termo cuero -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="terere" data-subcategory="termos">
+            <div class="card card-product-grid" data-id="5" data-name="Termo Forrado en Cuero" data-price="180000" data-image="https://via.placeholder.com/300x300.png/D2B48C/FFFFFF?text=Termo">
+              <a href="#" class="img-wrap position-relative">
+                <img src="https://via.placeholder.com/300x300.png/D2B48C/FFFFFF?text=Termo" class="card-img-top" alt="Termo">
+              </a>
+              <div class="card-body">
+                <div>
+                  <h6 class="card-title">Termo Forrado en Cuero</h6>
+                  <p class="price mb-3">180.000 Gs.</p>
+                </div>
+                <div class="input-group mt-auto">
+                  <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                  <input type="number" class="form-control quantity-input" value="1" min="1">
+                  <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                  <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kepis -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="accesorios" data-subcategory="gorras">
+            <div class="card card-product-grid" data-id="6" data-name="Kepis Personalizado" data-price="45000" data-image="https://via.placeholder.com/300x300.png/0275d8/FFFFFF?text=Kepis">
+              <a href="#" class="img-wrap position-relative">
+                <img src="https://via.placeholder.com/300x300.png/0275d8/FFFFFF?text=Kepis" class="card-img-top" alt="Kepis">
+              </a>
+              <div class="card-body">
+                <div>
+                  <h6 class="card-title">Kepis Trucker Personalizado</h6>
+                  <p class="price mb-3">45.000 Gs.</p>
+                </div>
+                <div class="input-group mt-auto">
+                  <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                  <input type="number" class="form-control quantity-input" value="1" min="1">
+                  <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                  <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Llavero -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="accesorios" data-subcategory="llaveros">
+            <div class="card card-product-grid" data-id="7" data-name="Llavero Acrílico con Foto" data-price="15000" data-image="https://via.placeholder.com/300x300.png/f0ad4e/FFFFFF?text=Llavero">
+              <a href="#" class="img-wrap position-relative">
+                <img src="https://via.placeholder.com/300x300.png/f0ad4e/FFFFFF?text=Llavero" class="card-img-top" alt="Llavero">
+              </a>
+              <div class="card-body">
+                <div>
+                  <h6 class="card-title">Llavero Acrílico con Foto</h6>
+                  <p class="price mb-3">15.000 Gs.</p>
+                </div>
+                <div class="input-group mt-auto">
+                  <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                  <input type="number" class="form-control quantity-input" value="1" min="1">
+                  <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                  <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cojín -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="accesorios" data-subcategory="cojines">
+            <div class="card card-product-grid" data-id="8" data-name="Cojín con Foto 40x40" data-price="85000" data-image="https://via.placeholder.com/300x300.png/d9534f/FFFFFF?text=Coj%C3%ADn">
+              <a href="#" class="img-wrap position-relative">
+                <img src="https://via.placeholder.com/300x300.png/d9534f/FFFFFF?text=Coj%C3%ADn" class="card-img-top" alt="Cojín">
+              </a>
+              <div class="card-body">
+                <div>
+                  <h6 class="card-title">Cojín con Foto 40x40cm</h6>
+                  <p class="price mb-3">85.000 Gs.</p>
+                </div>
+                <div class="input-group mt-auto">
+                  <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                  <input type="number" class="form-control quantity-input" value="1" min="1">
+                  <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                  <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Agenda -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="accesorios" data-subcategory="agendas">
+            <div class="card card-product-grid" data-id="9" data-name="Agenda Personalizada" data-price="75000" data-image="https://via.placeholder.com/300x300.png/5bc0de/FFFFFF?text=Agenda">
+              <a href="#" class="img-wrap position-relative">
+                <img src="https://via.placeholder.com/300x300.png/5bc0de/FFFFFF?text=Agenda" class="card-img-top" alt="Agenda">
+              </a>
+              <div class="card-body">
+                <div>
+                  <h6 class="card-title">Agenda 2026 Personalizada</h6>
+                  <p class="price mb-3">75.000 Gs.</p>
+                </div>
+                <div class="input-group mt-auto">
+                  <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                  <input type="number" class="form-control quantity-input" value="1" min="1">
+                  <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                  <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mousepad -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="accesorios" data-subcategory="mousepads">
+            <div class="card card-product-grid" data-id="10" data-name="Mousepad Gamer" data-price="55000" data-image="https://via.placeholder.com/300x300.png/1d2a38/FFFFFF?text=Mousepad">
+              <a href="#" class="img-wrap position-relative">
+                <img src="https://via.placeholder.com/300x300.png/1d2a38/FFFFFF?text=Mousepad" class="card-img-top" alt="Mousepad">
+              </a>
+              <div class="card-body">
+                <div>
+                  <h6 class="card-title">Mousepad Gamer XL Personalizado</h6>
+                  <p class="price mb-3">55.000 Gs.</p>
+                </div>
+                <div class="input-group mt-auto">
+                  <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                  <input type="number" class="form-control quantity-input" value="1" min="1">
+                  <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                  <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Body bebé -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="remeras" data-subcategory="bebe">
+            <div class="card card-product-grid" data-id="11" data-name="Body de Bebé" data-price="40000" data-image="https://via.placeholder.com/300x300.png/F7CAC9/000000?text=Body+Beb%C3%A9">
+              <a href="#" class="img-wrap position-relative">
+                <img src="https://via.placeholder.com/300x300.png/F7CAC9/000000?text=Body+Beb%C3%A9" class="card-img-top" alt="Body Bebé">
+              </a>
+              <div class="card-body">
+                <div>
+                  <h6 class="card-title">Body de Bebé "Mi Primera Hinchada"</h6>
+                  <p class="price mb-3">40.000 Gs.</p>
+                </div>
+                <div class="input-group mt-auto">
+                  <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                  <input type="number" class="form-control quantity-input" value="1" min="1">
+                  <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                  <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Puzzle -->
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex product-item" data-category="accesorios" data-subcategory="puzzles">
+            <div class="card card-product-grid" data-id="12" data-name="Rompecabezas con Foto" data-price="50000" data-image="https://via.placeholder.com/300x300.png/92A8D1/FFFFFF?text=Puzzle">
+              <a href="#" class="img-wrap position-relative">
+                <img src="https://via.placeholder.com/300x300.png/92A8D1/FFFFFF?text=Puzzle" class="card-img-top" alt="Puzzle">
+              </a>
+              <div class="card-body">
+                <div>
+                  <h6 class="card-title">Rompecabezas A4 con Foto</h6>
+                  <p class="price mb-3">50.000 Gs.</p>
+                </div>
+                <div class="input-group mt-auto">
+                  <button class="btn btn-outline-secondary btn-minus" type="button">-</button>
+                  <input type="number" class="form-control quantity-input" value="1" min="1">
+                  <button class="btn btn-outline-secondary btn-plus" type="button">+</button>
+                  <button class="btn btn-primary btn-cart-add"><i class="fa-solid fa-cart-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /#product-list -->
+      </div><!-- /col-lg-9 -->
+    </div><!-- /row -->
+  </div><!-- /container -->
+</section>
+
+<footer class="footer-instagram">
+  <div class="container">
+    <div class="row gy-5 text-center">
+      <div class="col-lg-4">
+        <h5>¡Síguenos en Instagram!</h5>
+        <p>Enterate de nuestras novedades y promociones exclusivas.</p>
+        <a href="https://www.instagram.com/guaranicoolpersonalizados/" class="btn btn-light mt-2">
+          <i class="fab fa-instagram me-2"></i> @guaranicoolpersonalizados
+        </a>
+      </div>
+
+      <div class="col-lg-4">
+        <h5>Contacto Directo</h5>
+        <p class="mb-2">
+          <i class="fa-brands fa-whatsapp me-2"></i>
+          <a href="https://wa.me/+595975624601" target="_blank">(0975) 624 601</a>
+        </p>
+        <p>
+          <i class="fa-solid fa-envelope me-2"></i>
+          <a href="mailto:angelmorinigo2020@gmail.com">angelmorinigo2020@gmail.com</a>
+        </p>
+      </div>
+
+      <div class="col-lg-4">
+        <h5>Nuestras Redes</h5>
+        <div class="footer-social-icons mt-3">
+          <a href="https://www.instagram.com/guaranicoolpersonalizados/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/guaranicoolpersonalizados" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://wa.me/+595975624601" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom-bar">
+      <p class="mb-0">&copy; 2025 Guaranicool Personalizados. Creado con ❤️ en Paraguay.</p>
+    </div>
+  </div>
 </footer>
 
+<!-- Modal Carrito -->
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-scrollable">
     <div class="modal-content">
@@ -622,8 +685,7 @@
         <h5 class="modal-title" id="cartModalLabel"><i class="fa fa-shopping-cart me-2"></i>Mi Carrito</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body" id="cart-modal-body">
-        </div>
+      <div class="modal-body" id="cart-modal-body"></div>
       <div class="modal-footer">
         <h5 class="me-auto">Total: <span id="cart-total" class="fw-bold">0 Gs.</span></h5>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
@@ -638,175 +700,227 @@
 
 <script>
 $(document).ready(function() {
-    
-    // --- LÓGICA PARA EL FONDO ANIMADO ---
-    const heroImages = [
-        'https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1288&q=80',
-        'https://images.unsplash.com/photo-1544465544-1b71aee9dfa3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1287&q=80',
-        'https://images.unsplash.com/photo-1552069027-02758f3355db?ixlib=rb-4.0.3&auto=format&fit=crop&w=1287&q=80'
-    ];
-    const heroContainer = $('#hero-bg-container');
-    
-    heroImages.forEach(imgUrl => {
-        const slide = $('<div></div>')
-            .addClass('hero-bg-slide')
-            .css('background-image', `url(${imgUrl})`);
-        heroContainer.append(slide);
-    });
 
-    let currentSlide = 0;
-    const slides = $('.hero-bg-slide');
+  /* === HERO SLIDES === */
+  const heroImages = [
+    'https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?auto=format&fit=crop&w=1288&q=80',
+    'https://images.unsplash.com/photo-1544465544-1b71aee9dfa3?auto=format&fit=crop&w=1287&q=80',
+    'https://images.unsplash.com/photo-1552069027-02758f3355db?auto=format&fit=crop&w=1287&q=80'
+  ];
+  const heroContainer = $('#hero-bg-container');
+  heroImages.forEach(imgUrl => {
+    const slide = $('<div></div>').addClass('hero-bg-slide').css('background-image', `url(${imgUrl})`);
+    heroContainer.append(slide);
+  });
+  let currentSlide = 0;
+  const slides = $('.hero-bg-slide');
+  slides.eq(currentSlide).addClass('active');
+  setInterval(() => {
+    slides.eq(currentSlide).removeClass('active');
+    currentSlide = (currentSlide + 1) % slides.length;
     slides.eq(currentSlide).addClass('active');
+  }, 5000);
 
-    setInterval(() => {
-        slides.eq(currentSlide).removeClass('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides.eq(currentSlide).addClass('active');
-    }, 5000);
-    
-    // --- LÓGICA PARA LOS FILTROS DE PRODUCTOS ---
-    $('.product-filters .nav-link').on('click', function(e) {
-        e.preventDefault();
-        $('.product-filters .nav-link').removeClass('active');
-        $(this).addClass('active');
+  /* === BUSCADOR simple === */
+  $('#search-btn').on('click', function() {
+    const term = $('#search-input').val().toLowerCase().trim();
+    if (!term) { $('.product-item').parent().fadeIn(200); return; }
+    const $items = $('.product-item');
+    $items.parent().hide();
+    $items.filter(function() {
+      const name = $(this).find('.card-title').text().toLowerCase();
+      return name.includes(term);
+    }).parent().fadeIn(200);
+  });
 
-        const filter = $(this).data('filter');
-        const productItems = $('.product-item');
+  /* === SIDEBAR: toggles + filtros (desktop) === */
+  function filterProducts({ all=false, category=null, subcategory=null } = {}) {
+    const $items = $('.product-item');
+    $items.parent().hide();
 
-        productItems.parent().fadeOut(200);
+    if (all) { $items.parent().fadeIn(200); return; }
 
-        setTimeout(function() {
-            if (filter === 'all') {
-                productItems.parent().fadeIn(300);
-            } else {
-                productItems.filter(`[data-category="${filter}"]`).parent().fadeIn(300);
-            }
-        }, 200);
-    });
+    let $filtered = $items;
+    if (category) $filtered = $filtered.filter(`[data-category="${category}"]`);
+    if (subcategory) $filtered = $filtered.filter(`[data-subcategory="${subcategory}"]`);
+    $filtered.parent().fadeIn(200);
+  }
 
-    // --- CÓDIGO DEL CARRITO ---
-    let cart = [];
+  // Desktop
+  $('#cat-list').on('click', '.list-group-item', function () {
+    const cat = $(this).data('cat');
+    const $sub = $(`.subcat[data-parent="${cat}"]`);
+    const isOpen = $sub.is(':visible');
 
-    function formatCurrency(number) {
-        return new Intl.NumberFormat('es-PY', { style: 'currency', currency: 'PYG', minimumFractionDigits: 0 }).format(number);
-    }
-    
-    $('#product-list').on('click', '.btn-plus, .btn-minus', function() {
-        const input = $(this).closest('.input-group').find('.quantity-input');
-        let value = parseInt(input.val());
-        if ($(this).hasClass('btn-plus')) {
-            value++;
-        } else {
-            if (value > 1) {
-                value--;
-            }
-        }
-        input.val(value);
-    });
+    // estados visuales
+    $('.list-group-item').removeClass('active');
+    $(this).toggleClass('active', !isOpen);
 
-    $('#product-list').on('click', '.btn-cart-add', function() {
-        const card = $(this).closest('.card-product-grid');
-        const quantityInput = card.find('.quantity-input');
-        const quantity = parseInt(quantityInput.val());
+    // abrir/cerrar subcat correspondiente y cerrar otras
+    $('.subcat').not($sub).slideUp(150);
+    $sub.slideToggle(150);
 
-        if (isNaN(quantity) || quantity < 1) return;
+    // filtra por categoría (si se cierra, sigo mostrando por cat)
+    filterProducts({ category: cat });
+    // limpiar highlight de subcat
+    $('.subcat a').removeClass('active');
+  });
 
-        const product = {
-            id: card.data('id'),
-            name: card.data('name'),
-            price: card.data('price'),
-            image: card.find('.card-img-top').attr('src'),
-            quantity: quantity
-        };
+  $('.categories-sidebar').on('click', '.subcat a', function (e) {
+    e.preventDefault();
+    const subcat = $(this).data('subcat');
+    const parent = $(this).closest('.subcat').data('parent');
+    $('.subcat a').removeClass('active');
+    $(this).addClass('active');
+    filterProducts({ category: parent, subcategory: subcat });
+  });
 
-        const existingProduct = cart.find(item => item.id === product.id);
-        if (existingProduct) {
-            existingProduct.quantity += product.quantity;
-        } else {
-            cart.push(product);
-        }
-        
-        const button = $(this);
-        const originalIcon = button.html();
-        button.html('<i class="fa-solid fa-check"></i>');
-        
-        setTimeout(() => {
-            button.html(originalIcon);
-        }, 1500);
+  $('#filter-all').on('click', function (e) {
+    e.preventDefault();
+    $('.list-group-item').removeClass('active');
+    $('.subcat').slideUp(0);
+    $('.subcat a').removeClass('active');
+    filterProducts({ all: true });
+  });
 
-        quantityInput.val(1);
-        updateCart();
-    });
-    
-    function updateCart() {
-        const cartModalBody = $('#cart-modal-body');
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        $('#cart-count').text(totalItems);
+  // Mobile (offcanvas)
+  $('#cat-list-mobile').on('click', '.list-group-item', function () {
+    const cat = $(this).data('cat');
+    const $sub = $(`#cat-list-mobile .subcat[data-parent="${cat}"]`);
+    $('.subcat', '#cat-list-mobile').not($sub).slideUp(150);
+    $sub.slideToggle(150);
+    filterProducts({ category: cat });
+  });
+  $('#cat-list-mobile').on('click', '.subcat a', function (e) {
+    e.preventDefault();
+    const subcat = $(this).data('subcat');
+    const parent = $(this).closest('.subcat').data('parent');
+    $('#cat-list-mobile .subcat a').removeClass('active');
+    $(this).addClass('active');
+    filterProducts({ category: parent, subcategory: subcat });
+    // cerrar offcanvas al elegir subcat
+    const offcanvasEl = document.getElementById('offcanvasCats');
+    const oc = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+    oc.hide();
+  });
+  $('#filter-all-mobile').on('click', function (e) {
+    e.preventDefault();
+    $('#cat-list-mobile .subcat').slideUp(0);
+    $('#cat-list-mobile .subcat a').removeClass('active');
+    filterProducts({ all: true });
+    const offcanvasEl = document.getElementById('offcanvasCats');
+    const oc = bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl);
+    oc.hide();
+  });
 
-        if (cart.length === 0) {
-            cartModalBody.html('<p class="text-center my-4">Tu carrito está vacío.</p>');
-            $('#cart-total').text('0 Gs.');
-            return;
-        }
+  /* === CARRITO === */
+  let cart = [];
 
-        cartModalBody.empty();
-        let total = 0;
-        cart.forEach(item => {
-            total += item.price * item.quantity;
-            const itemHTML = `
-                <div class="d-flex align-items-center mb-3 border-bottom pb-3 cart-item" data-id="${item.id}">
-                    <img src="${item.image}" width="60" class="rounded me-3" alt="${item.name}">
-                    <div class="flex-grow-1">
-                        <h6 class="mb-1 small">${item.name}</h6>
-                        <div>
-                           <span>${item.quantity} x </span>
-                           <span class="fw-bold">${formatCurrency(item.price)}</span>
-                        </div>
-                    </div>
-                    <div class="text-end ms-3">
-                         <p class="fw-bold mb-1">${formatCurrency(item.price * item.quantity)}</p>
-                         <button class="btn btn-sm btn-outline-danger remove-from-cart" aria-label="Eliminar item">
-                            <i class="fa-solid fa-trash-can"></i>
-                         </button>
-                    </div>
-                </div>`;
-            cartModalBody.append(itemHTML);
-        });
-        $('#cart-total').text(formatCurrency(total));
-    }
+  function formatCurrency(number) {
+    return new Intl.NumberFormat('es-PY', { style: 'currency', currency: 'PYG', minimumFractionDigits: 0 }).format(number);
+  }
 
-    $('#cart-modal-body').on('click', '.remove-from-cart', function() {
-        const productId = $(this).closest('.cart-item').data('id');
-        cart = cart.filter(item => item.id !== productId);
-        updateCart();
-    });
+  $('#product-list').on('click', '.btn-plus, .btn-minus', function() {
+    const input = $(this).closest('.input-group').find('.quantity-input');
+    let value = parseInt(input.val());
+    if ($(this).hasClass('btn-plus')) value++;
+    else if (value > 1) value--;
+    input.val(value);
+  });
 
-    $('#checkout-btn').on('click', function(event) {
-        event.preventDefault();
-        if (cart.length === 0) {
-            alert('Tu carrito está vacío. Añade productos antes de finalizar la compra.');
-            return;
-        }
-        const phoneNumber = '595975624601';
-        let message = '¡Hola! Quisiera hacer el siguiente pedido:\n\n';
-        let total = 0;
-        cart.forEach(item => {
-            const subtotal = item.quantity * item.price;
-            message += `*Producto:* ${item.name}\n`;
-            message += `(Código: ${item.id})\n`;
-            message += `*Cantidad:* ${item.quantity}\n`;
-            message += `*Subtotal:* ${formatCurrency(subtotal)}\n\n`;
-            total += subtotal;
-        });
-        message += `-----------------------\n`;
-        message += `*TOTAL DEL PEDIDO: ${formatCurrency(total)}*\n\n`;
-        message += `Espero su confirmación. ¡Gracias!`;
-        const encodedMessage = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-        window.open(whatsappUrl, '_blank');
-    });
+  $('#product-list').on('click', '.btn-cart-add', function() {
+    const card = $(this).closest('.card-product-grid');
+    const quantityInput = card.find('.quantity-input');
+    const quantity = parseInt(quantityInput.val());
+    if (isNaN(quantity) || quantity < 1) return;
 
+    const product = {
+      id: card.data('id'),
+      name: card.data('name'),
+      price: parseInt(card.data('price')),
+      image: card.find('.card-img-top').attr('src'),
+      quantity: quantity
+    };
+
+    const existingProduct = cart.find(item => item.id === product.id);
+    if (existingProduct) existingProduct.quantity += product.quantity;
+    else cart.push(product);
+
+    const button = $(this);
+    const originalIcon = button.html();
+    button.html('<i class="fa-solid fa-check"></i>');
+    setTimeout(() => { button.html(originalIcon); }, 1500);
+
+    quantityInput.val(1);
     updateCart();
+  });
+
+  function updateCart() {
+    const cartModalBody = $('#cart-modal-body');
+    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    $('#cart-count').text(totalItems);
+
+    if (cart.length === 0) {
+      cartModalBody.html('<p class="text-center my-4">Tu carrito está vacío.</p>');
+      $('#cart-total').text('0 Gs.');
+      return;
+    }
+
+    cartModalBody.empty();
+    let total = 0;
+    cart.forEach(item => {
+      total += item.price * item.quantity;
+      const itemHTML = `
+        <div class="d-flex align-items-center mb-3 border-bottom pb-3 cart-item" data-id="${item.id}">
+          <img src="${item.image}" width="60" class="rounded me-3" alt="${item.name}">
+          <div class="flex-grow-1">
+            <h6 class="mb-1 small">${item.name}</h6>
+            <div><span>${item.quantity} x </span><span class="fw-bold">${formatCurrency(item.price)}</span></div>
+          </div>
+          <div class="text-end ms-3">
+            <p class="fw-bold mb-1">${formatCurrency(item.price * item.quantity)}</p>
+            <button class="btn btn-sm btn-outline-danger remove-from-cart" aria-label="Eliminar item">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </div>
+        </div>`;
+      cartModalBody.append(itemHTML);
+    });
+    $('#cart-total').text(formatCurrency(total));
+  }
+
+  $('#cart-modal-body').on('click', '.remove-from-cart', function() {
+    const productId = $(this).closest('.cart-item').data('id');
+    cart = cart.filter(item => item.id !== productId);
+    updateCart();
+  });
+
+  $('#checkout-btn').on('click', function(event) {
+    event.preventDefault();
+    if (cart.length === 0) {
+      alert('Tu carrito está vacío. Añade productos antes de finalizar la compra.');
+      return;
+    }
+    const phoneNumber = '595975624601';
+    let message = '¡Hola! Quisiera hacer el siguiente pedido:\n\n';
+    let total = 0;
+    cart.forEach(item => {
+      const subtotal = item.quantity * item.price;
+      message += `*Producto:* ${item.name}\n`;
+      message += `(Código: ${item.id})\n`;
+      message += `*Cantidad:* ${item.quantity}\n`;
+      message += `*Subtotal:* ${formatCurrency(subtotal)}\n\n`;
+      total += subtotal;
+    });
+    message += `-----------------------\n`;
+    message += `*TOTAL DEL PEDIDO: ${formatCurrency(total)}*\n\n`;
+    message += `Espero su confirmación. ¡Gracias!`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  });
+
+  updateCart();
 });
 </script>
 
